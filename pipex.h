@@ -8,7 +8,7 @@
 # include <sys/types.h> // pid_t
 # include <sys/wait.h>  // wait(), waitpid()
 # include <unistd.h>    // fork(), pipe(), execve(), access(), dup2(), close()
-
+# include "./libft/libft.h"
 typedef struct s_fd
 {
 	int	fd_in;

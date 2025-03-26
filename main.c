@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skayed <skayed@student.42roma.it>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/26 15:22:34 by skayed            #+#    #+#             */
+/*   Updated: 2025/03/26 15:22:53 by skayed           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex.h"
 
 int	main(int argc, char *argv[], char *envp[])
 {
-	t_fd *list_fd;
+	t_fd	*list_fd;
 	pid_t	pid1;
 	pid_t	pid2;
 
@@ -11,7 +23,7 @@ int	main(int argc, char *argv[], char *envp[])
 		exit(0);
 	pid1 = fork();
 	if (pid1 < 0)
-		return(perror("Fork 1 failed"), 1);
+		return (perror("Fork 1 failed"), 1);
 	if (pid1 == 0)
 	{
 		dup2(list_fd->fd_in, STDIN_FILENO);
@@ -21,7 +33,7 @@ int	main(int argc, char *argv[], char *envp[])
 	}
 	pid2 = fork();
 	if (pid2 < 0)
-		return(perror("Fork 2 failed"), 1);
+		return (perror("Fork 2 failed"), 1);
 	if (pid2 == 0)
 	{
 		dup2(list_fd->fd_out, STDOUT_FILENO);
