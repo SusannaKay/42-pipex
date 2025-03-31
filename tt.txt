@@ -1,7 +1,0 @@
-scorrere envp e cerca path OK
-strjoin cmd OK
-access per verificare se la cartella + cmd esiste ed e eseguibile OK
-
-verifica su comando multiplo se tutti esistono e sono eseguibili 
-
-parse cmd args 
